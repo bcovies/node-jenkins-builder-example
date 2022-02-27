@@ -1,0 +1,13 @@
+#!/usr/bin/env groovy
+pipeline {
+    agent { label "dockermgr" }
+    stages{
+        stage('Docker build'){
+          steps {
+              sh """
+                docker-compose build
+              """
+          }
+        }
+    }
+}
